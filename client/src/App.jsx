@@ -1,9 +1,9 @@
 import React from 'react'
 import Login from './Pages/Login/Login'
-import { ToastContainer } from 'react-toastify'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import Navbar from './Pages/Navbar/Navbar'
-import AdminDashboard from './Pages/Dashboard/AdminDashboard'
+import AdminDashboard from './Pages/Dashboard/Admin/Home'
+import MentorDashboard from './Pages/Dashboard/MentorDashboard'
 const App = () => {
 
   const myRouter = createBrowserRouter([
@@ -18,14 +18,17 @@ const App = () => {
     {
       path: '/admin/dashboard',
       element:<><Navbar/><AdminDashboard/></>
+    },
+    {
+      path: '/mentor/dashboard',
+      element:<><Navbar/><MentorDashboard/></>
     }
   ])
 
   return (
-    <div>
+    <div className='' >
       <RouterProvider router={myRouter} >
       </RouterProvider>
-      <ToastContainer/>
     </div>
   )
 }
