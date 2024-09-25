@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddUser = ({ isFormOpen, setIsFormOpen }) => {
   const {
     register,
@@ -10,15 +12,11 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
   } = useForm();
   
   const [loading, setLoading] = useState(false); // Loading state
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (data) => {
     const url = 'http://localhost:3000/users';
 
-    setLoading(true); // Set loading to true
-    setSuccessMessage("");
-    setErrorMessage("");
+    setLoading(true);
 
     try {
       const response = await fetch(url, {
@@ -35,14 +33,14 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
         }),
       });
 
+      toast.success("User added successfully" , {theme: "dark"})
       if (!response.ok) {
         throw new Error("Failed to add user");
       }
 
-      reset(); // Clear form fields on successful submission
-      setSuccessMessage("User added successfully!"); // Success message
+      reset(); // Clear form fields on successful submissione
     } catch (error) {
-      setErrorMessage(error.message); // Set error message
+      toast.error("Failed to add user" , {theme: "dark"})
     } finally {
       setLoading(false); // Set loading to false
     }
@@ -56,18 +54,16 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
     <div
       className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#cae9ff] h-[70vh] z-10 w-[30vw] rounded-xl transition-all duration-100 ${isFormOpen}`}
     >
-      <header>
-        <p onClick={closeForm} className="text-right cursor-pointer">
-          Close
+      <header className="flex justify-end">
+        <p onClick={closeForm} className="cursor-pointer text-red-500 pr-4 pt-2 text-2xl">
+          <IoIosCloseCircleOutline/>
         </p>
       </header>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="px-6 py-2 relative h-[90%]"
+        className="px-6 py-2 relative h-fit"
       >
-        {successMessage && <p className="text-green-600">{successMessage}</p>}
-        {errorMessage && <p className="text-red-600">{errorMessage}</p>}
 
         <div className="flex justify-between items-center gap-4 mt-4">
           <div>
@@ -172,12 +168,15 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
 
         <button
           type="submit"
-          className={`bg-black w-[90%] mx-auto text-white absolute bottom-4 py-2 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`bg-black w-full mx-auto text-white py-2 mt-8 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
           disabled={loading} // Disable button when loading
         >
           {loading ? "Adding..." : "Add"}
         </button>
       </form>
+        
+        <ToastContainer/>
+
     </div>
   );
 };

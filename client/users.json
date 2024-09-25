@@ -1,28 +1,20 @@
 {
   "users": [
     {
-      "id": "5d99",
-      "FirstName": "ajay",
-      "LastName": "sinha",
-      "Email": "ajay@mentor.com",
+      "id": "b67c",
+      "FirstName": "Pinaki",
+      "LastName": "Ray",
+      "Email": "pinaki.bpd2001@gmail.com",
       "Role": "mentor",
       "Password": "123"
     },
     {
-      "id": "bdea",
-      "FirstName": "ravi",
-      "LastName": "teja",
-      "Email": "ravi@mentor.com",
-      "Role": "mentor",
-      "Password": "456"
-    },
-    {
-      "id": "aa24",
-      "FirstName": "rahul",
-      "LastName": "nanda",
+      "id": "ca56",
+      "FirstName": "Rahul",
+      "LastName": "Ray",
       "Email": "rahul@mentor.com",
       "Role": "mentor",
-      "Password": "789"
+      "Password": "123"
     }
   ]
 }
