@@ -15,6 +15,38 @@
       "Email": "rahul@mentor.com",
       "Role": "mentor",
       "Password": "123"
+    },
+    {
+      "id": "076b",
+      "FirstName": "vinod",
+      "LastName": "reddy",
+      "Email": "vinod@mentor.com",
+      "Role": "mentor",
+      "Password": "124"
+    },
+    {
+      "id": "a07d",
+      "FirstName": "naveen",
+      "LastName": "reddy",
+      "Email": "naveen@mentor.com",
+      "Role": "mentor",
+      "Password": "123"
+    },
+    {
+      "id": "928d",
+      "FirstName": "priya",
+      "LastName": "reddy",
+      "Email": "priya@mentor.com",
+      "Role": "mentor",
+      "Password": "123"
+    },
+    {
+      "id": "43dd",
+      "FirstName": "naveen",
+      "LastName": "raj",
+      "Email": "naveen@mentor.com",
+      "Role": "mentor",
+      "Password": "123"
     }
   ]
 }

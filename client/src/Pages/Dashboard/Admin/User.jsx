@@ -4,6 +4,8 @@ import usersData from "../../../../users.json";
 import AddUser from "./AddUser";
 import { ImUserTie } from "react-icons/im";
 import { HiUserPlus } from "react-icons/hi2";
+import { MdDeleteForever } from "react-icons/md";
+
 const User = () => {
   const userInfo = usersData;
   const [isFormOpen, setIsFormOpen] = useState("scale-0")
@@ -23,6 +25,8 @@ const User = () => {
         </div>
       </div>
 
+
+        {/* user card  */}
         {userInfo.users.map((Element, id) => (
           <div className="w-[22vw] border bg-blue-50 h-[25vh] rounded-md px-3 py-4 relative" key={id} >
             <header className="flex items-center gap-3" >
@@ -33,7 +37,10 @@ const User = () => {
               </div>
             </header>
 
-            <footer className="text-xs font-bold opacity-70 absolute bottom-2" >{Element.Email}</footer>
+            <footer className="text-xs font-bold opacity-70 absolute bottom-2 flex justify-between w-[93%]" >
+              <p className="text-xs font-bold opacity-70" >{Element.Email}</p>
+              <button className="text-red-600 text-xl" ><MdDeleteForever/></button>
+            </footer>
           </div>
         ))}
 

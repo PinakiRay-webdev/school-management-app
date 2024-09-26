@@ -8,12 +8,13 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset, // Add reset method to clear form
+    reset,
   } = useForm();
   
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data , event) => {
+    event.preventDefault();
     const url = 'http://localhost:3000/users';
 
     setLoading(true);
@@ -38,11 +39,11 @@ const AddUser = ({ isFormOpen, setIsFormOpen }) => {
         throw new Error("Failed to add user");
       }
 
-      reset(); // Clear form fields on successful submissione
+      reset();
     } catch (error) {
       toast.error("Failed to add user" , {theme: "dark"})
     } finally {
-      setLoading(false); // Set loading to false
+      setLoading(false);
     }
   };
 
