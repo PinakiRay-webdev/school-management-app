@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import usersData from "../../../../users.json";
+import usersData from "../../../users.json";
 import AddUser from "./AddUser";
 import { ImUserTie } from "react-icons/im";
 import { HiUserPlus } from "react-icons/hi2";

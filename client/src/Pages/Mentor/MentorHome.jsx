@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-const MentorDashboard = () => {
+const MentorHome = () => {
 
   const navigate = useNavigate();
   const logout = () =>{
@@ -18,4 +18,4 @@ const MentorDashboard = () => {
   )
 }
 
-export default MentorDashboard
+export default MentorHome

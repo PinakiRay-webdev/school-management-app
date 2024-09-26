@@ -1,5 +1,5 @@
 import React from 'react';
-import { sideNav } from '../../../Constants/constants';
+import { sideNav } from '../../Constants/constants';
 import { useNavigate } from 'react-router-dom';
 const SideNav = ({ setActiveSection }) => { 
 

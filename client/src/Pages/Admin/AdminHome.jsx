@@ -5,7 +5,7 @@ import User from "./User";
 import Settings from "./Settings";
 import Statistics from "./Statistics";
 
-const Home = () => {
+const AdminHome = () => {
   const [activeSection, setActiveSection] = useState('Dashboard');
 
   return (
@@ -20,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AdminHome;

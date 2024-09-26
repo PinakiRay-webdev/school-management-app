@@ -1,9 +1,9 @@
 import React from 'react'
-import Login from './Pages/Login/Login'
+import Login from './Authentication/Login/Login'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
-import Navbar from './Pages/Navbar/Navbar'
-import AdminDashboard from './Pages/Dashboard/Admin/Home'
-import MentorDashboard from './Pages/Dashboard/MentorDashboard'
+import Navbar from './components/Navbar/Navbar'
+import AdminHome from './Pages/Admin/AdminHome'
+import MentorHome from './Pages/Mentor/MentorHome'
 const App = () => {
 
   const myRouter = createBrowserRouter([
@@ -17,11 +17,11 @@ const App = () => {
     },
     {
       path: '/admin/dashboard',
-      element:<><Navbar/><AdminDashboard/></>
+      element:<><Navbar/><AdminHome/></>
     },
     {
       path: '/mentor/dashboard',
-      element:<><Navbar/><MentorDashboard/></>
+      element:<><Navbar/><MentorHome/></>
     }
   ])
 
